@@ -35,11 +35,13 @@ def update
     render 'edit'
 end
 end
-def destroy
-  @post = Post.find(params[:id])
-  @post.destroy
 
-  redirect_to root_path
+
+  def destroy
+      @post.destroy
+      redirect_to root_path
+
+
 
 end
 private
