@@ -9,8 +9,8 @@ default: &default
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
-  username: rails_user
-  password: abc123@
+  username: 
+  password:
   host: localhost
 
 
