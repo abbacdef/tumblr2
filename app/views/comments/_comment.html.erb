@@ -4,8 +4,11 @@
         <p class="comment_body"><%= comment.body %></p>
         <p class= "comment_title"><%= time_ago_in_words(comment.created_at)%> Ago</p>
     </div>
-    <%= link_to 'delete', [comment.post, comment], method: :delete, class: "mybutton1", data: {
+
+    <% if user_signed_in? %>
+     <%= link_to 'delete', [comment.post, comment], method: :delete, class: "mybutton1", data: {
       confirm: 'Are you sure?' } %>
+    <% end %>
 
 
 </div>
