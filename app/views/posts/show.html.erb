@@ -2,11 +2,15 @@
   <h1 class="title"><div class="button2"><%= @post.title %></div>
   </h1>
    <p class="date">
-  Submitted <%= time_ago_in_words(@post.created_at) %> ago
-
-
-   </p>
+  Submitted <%= time_ago_in_words(@post.created_at) %> ago</p>
 
    <p class="body">
      <%= @post.body %>&nbsp;
-     </p> &nbsp;&nbsp; </div><div class="button1"><p><%= link_to 'Edit', edit_post_path(@post) %></p></div> <div class="button1"><p><%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are You Sure?'} %></p></div>
+      </p></div><div class="button1"><p><%= link_to 'Edit', edit_post_path(@post) %></p></div> <div class="button1"><p><%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are You Sure?'} %></p>
+       </div><br><div id="comments">
+
+         <h2>( <%= @post.comments.count%>  )  Comments </h2>
+         <div class="boder"> <%=render @post.comments %></div><br>
+         <h3> Join Discussion:</h3>
+         <%= render 'comments/form'%>
+       </div>
