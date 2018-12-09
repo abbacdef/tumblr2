@@ -42,7 +42,7 @@
   <div class="buttons">
     <% if user_signed_in? %>
     <button class="button"><%= link_to "make Post", new_post_path %></button>
-    <button class="button"><%= link_to "Sign Out", destroy_user_session_path, method: :destroy %><%end%></button>
+    <button class="button"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %><%end%></button>
 
       </div>
 
